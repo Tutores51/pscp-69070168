@@ -1,9 +1,7 @@
-"""Personal ID card"""
-id_card = input()
-n = 0
-for _ in id_card:
-    n += 1
-if n == 13:
+"""Student id card"""
+id_card  = input()
+
+if id_card[2] == '1' and id_card[3] == '6':
     print("yes")
 else:
     print("no")

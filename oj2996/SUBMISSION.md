@@ -13,27 +13,23 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 ## 1. OJ Information
 
 OJ problem number/title:
-
 ```text
-
+2996
 ```
-
 OJ submission ID, if submitted:
-
 ```text
-
+542594
 ```
-
 OJ status:
 
 ```text
-Pass / Not Pass / Not Submit
+Pass
 ```
 
 Independent time spent on this problem:
 
 ```text
-
+0-15 minutes
 ```
 
 Choose one:
@@ -73,7 +69,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-
+ให้รับข้อความและส่งตัวอักษรจากข้อความนั้นโดยเรียงจากหลังมาหน้าเป็นพิมพ์เล็ก input คือตัวอักษรที่เราใส่ ส่วนoutput คือตัวอักษรทั้งหมดจากท้ายมาหน้าโดยเปลี่ยนเป็นพิมพ์เล็ก เช่น ApPlE ก็ต้องได้ elppa constraints คือoutputต้องเป็นตัวพิมพ์เล็กเท่านั้
 ```
 
 ---
@@ -93,9 +89,10 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+Step 1:รับตัวอักษร
+Step 2:นับตัวอักษรจากหลังมาหน้า
+Step 3:เปลี่ยนให้เป็นตัวเล็ก
+Step 4:แสดงผลลัพธ์
 ```
 
 ---
@@ -115,7 +112,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-
+เหมือนกัน กระบวนการคิดถูกต้องดีแล้ว
 ```
 
 ---
@@ -135,31 +132,31 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-
+ลองดูว่าจะเปลี่ยนเป็นพิมพ์เล็กมั้ย
 ```
 
 Input:
 
 ```text
-
+APPLE
 ```
 
 Expected output:
 
 ```text
-
+elppa
 ```
 
 Actual output:
 
 ```text
-
+elppa
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -167,31 +164,31 @@ Pass / Not Pass
 Why I chose this case:
 
 ```text
-
+ดูว่าหากเป็นพิมพ์เล็กอยู่แล้วจะได้มั้ย
 ```
 
 Input:
 
 ```text
-
+apple
 ```
 
 Expected output:
 
 ```text
-
+elppa
 ```
 
 Actual output:
 
 ```text
-
+elppa
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 3
@@ -199,31 +196,31 @@ Pass / Not Pass
 Why I chose this case:
 
 ```text
-
+ดูว่าหากสลับกันจะแสดงผลมั้ย
 ```
 
 Input:
 
 ```text
-
+ApPlE
 ```
 
 Expected output:
 
 ```text
-
+elppa
 ```
 
 Actual output:
 
 ```text
-
+elppa
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ---
@@ -233,13 +230,13 @@ Pass / Not Pass
 Did you use AI for this problem?
 
 ```text
-Yes / No
+No
 ```
 
 If yes, also complete:
 
 ```text
-ai_reflection.md
+
 ```
 
 If you only asked a friend, TA, or instructor and did not use AI, you do not need to complete `ai_reflection.md`.
@@ -251,7 +248,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-Yes / No
+No
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -305,10 +302,10 @@ Write `Yes` for each statement.
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
