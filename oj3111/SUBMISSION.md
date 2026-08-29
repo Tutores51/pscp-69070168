@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3031
+3042
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-589989
+564578
 ```
 
 OJ status:
@@ -33,7 +33,7 @@ Pass
 Independent time spent on this problem:
 
 ```text
-15-30 minutes
+0-15 minutes
 ```
 
 Choose one:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ให้ทำระบบคำนวนเวลาที่น้ำหมึกจะขยายเป็นวงกลมไปถึงบ้านแต่ละหลังที่เรามีข้อมูลเริ่มจากจุด0,0 โดยinput มี S พื้นที่ทีหมึกไหลไปต่อวินาที N จำนวนบ้านที่ต้องการรู้ว่าถูน้ำท่วมในวินาทีใด X,Y คือพิกัดบ้านจำนวนเท่ากับN output คือ จำนวนวินาทีที่น้ำหมึกถึงบ้านแต่ละหลังเป็นวินาทีปัดขึ้น constraints คำตอบเป็นวินาทีที่ปัดขึ้นค่า piสำหรับสูตรคำนวน = 3.1416 1บรรทัด ใส่ 2 input
+โปรแกรมรับจำนวนเต็มบวก1จำนวน และหาร10 ไปเรื่อยๆจนได้0 โดยจะแสดงเป็นเลขที่10หารลงตัว input จำนวนเต็มบวก output เลขที่10 หารลงตัวจากค่าที่เราใส่ จนถึง 0 constraints จำนวนเต็มบวก ต้องเว้นวัก เอาเฉพาะจำนวนที่เลขนั้นหารลงตัวเช่น 106 ก็ 100 90 80
 ```
 
 ---
@@ -93,12 +93,11 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับระยะเวลาที่หมึกไหล และ จำนวนบ้านที่อยากรู้เวลาหมึกมาถึง
-Step 2:ใส่พิกัดบ้านXและY
-Step 3:คำนวนระยะ
-Step 4:คำนวนว่าถึงบ้านใช้เวลากี่วิปัดขึ้น
-Step 5:วนกลับขั้น3 คำนวนแต่ละหลังจนครบN
-step 6:แสดงผลทั้งหมด
+Step 1:รับจำนวนเต็มบวก
+Step 2:หาร 10 เอา เลขที่10หารลงตัว
+Step 3:เก็บข้อมูล
+Step 4:วน 2 จนหารไม่ได้
+Step 5:แสดงลทั้งหมด
 ```
 
 ---
@@ -118,7 +117,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same because it's work
+same im the best not anything in that plan was wrong
 ```
 
 ---
@@ -138,35 +137,25 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ดูว่าสูตรคำนวนถูกต้องมั้ย
+test
 ```
 
 Input:
 
 ```text
-50 4
-1 1
-10 10
-20 20
-30 30
+99
 ```
 
 Expected output:
 
 ```text
-1
-13
-51
-144
+90 80 70 60 50 40 30 20 10 0
 ```
 
 Actual output:
 
 ```text
-1
-13
-51
-144
+90 80 70 60 50 40 30 20 10 0
 ```
 
 Result:
@@ -180,29 +169,25 @@ Pass
 Why I chose this case:
 
 ```text
-ดูว่าปัดขึ้นมั้ย
+ลอง 0 ว่า จะตอบมั้ย
 ```
 
 Input:
 
 ```text
-60 2
-16 20
-11 12
+0
 ```
 
 Expected output:
 
 ```text
-35
-14
+0
 ```
 
 Actual output:
 
 ```text
-35
-14
+0
 ```
 
 Result:
@@ -216,29 +201,25 @@ Pass
 Why I chose this case:
 
 ```text
-ดูว่าค่าเต็มลบจะได้คำตอบมั้ย
+ลองเต็มลบว่าจะหารมั้ย
 ```
 
 Input:
 
 ```text
-10 2
--1 -1
--10 -10
+-10
 ```
 
 Expected output:
 
 ```text
-1
-63
+-
 ```
 
 Actual output:
 
 ```text
-1
-63
+-
 ```
 
 Result:
@@ -272,7 +253,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-YES explanation of a programming concept
+No
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -297,19 +278,19 @@ Not allowed:
 Who helped you?
 
 ```text
-a guy in youtube
+
 ```
 
 What did they help with?
 
 ```text
-สูตรการคำนวน
+
 ```
 
 What did you still do by yourself?
 
 ```text
-everything else
+
 ```
 
 Did you copy any code from another person?

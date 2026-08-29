@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3024
+3036
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-549686
+600508
 ```
 
 OJ status:
@@ -73,8 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ระบบจะบอกคะแนนรวมและคะแนนที่มากที่สุดเป็นจำนวนจริง ให้หาคะแนนต่ำสุดไม่ต่ำกว่า0 หากคะแนนสูงสุดมากกว่าคะแนนต่ำสุดตั้งแต่2คะแนนขึ้นไปขึ้น Surprising ถ้าไม่ขึ้น Not surprising input คะแนนรวม,คะแนนสูงสุด output Surprisingถ้าห่างมากว่า2 ,Not surprising ถ้าห่างไม่เกิน2
-```
+เขียนโปรแกรมรับหมายเลขห้องที่อยู่ และหาว่าถ้าจะเดินทางไปถึงห้อง 1 จะต้องพังกำแพงน้อยที่สุดกี่กำแพง พื้นที่นี้เป็น3เหลื่ยมแบบปิรามิด1-25 หนึ่งคือปลายบนสุด constraintsโดยจะเอาที่เดินน้อยสุดที่จะไปถึง1 และต้องอยู่ในแถวเท่านั้น inputห้องที่เราอยู่ output จำนวนจากห้องที่เราอยู่ไป1ที่สั้นที่สุด
 
 ---
 
@@ -93,10 +92,12 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับคะแนนรวม และ คะแนนสูงสุด
-Step 2:หาคะแนนต่ำสุดน้อยสุด
-Step 3:ตรวจสอบว่าคะแนนสูงสุดกับต่ำสุดห่างเกิน2มั้ย
-Step 4:แสดงผล Surprising,Not surprising
+Step 1:รับห้องที่เราอยู่
+Step 2:ค่าrow เป็น 1
+Step 3:ยกกำลัง+1ไปเรื่อยหาแถวที่เราอยู่
+Step 4:ใช้สูตรหาตำแหน่งในแถว
+Step 5:คำนวนระยะห่างจากตำแน่งที่ได้
+Step 6:แสดงผล
 ```
 
 ---
@@ -116,7 +117,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-เปลี่ยนให้ค่าต่ำสุดไม่น้อยกว่า0
+same its work is good
 ```
 
 ---
@@ -142,20 +143,19 @@ Why I chose this case:
 Input:
 
 ```text
-20
-10
+22
 ```
 
 Expected output:
 
 ```text
-Surprising
+7
 ```
 
 Actual output:
 
 ```text
-Surprising
+7
 ```
 
 Result:
@@ -169,26 +169,25 @@ Pass
 Why I chose this case:
 
 ```text
-ดูว่าหากส่วนต่างไม่เิน2จะเป็น notมั้ย
+ถ้าใส่1จะตอบ0มั้ย
 ```
 
 Input:
 
 ```text
-29
-8
+1
 ```
 
 Expected output:
 
 ```text
-Not surprising
+0
 ```
 
 Actual output:
 
 ```text
-Not surprising
+0
 ```
 
 Result:
@@ -202,26 +201,25 @@ Pass
 Why I chose this case:
 
 ```text
-หากค่ารวมค่าน้อยว่า 0 จะปรับให้เท่ากับ0มั้ย
+ใส่เลขที่มากว่า25จะได้คำตอบมั้ย
 ```
 
 Input:
 
 ```text
--29
--10
+26
 ```
 
 Expected output:
 
 ```text
-Not surprising
+-
 ```
 
 Actual output:
 
 ```text
-Not surprising
+10
 ```
 
 Result:

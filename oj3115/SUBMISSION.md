@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3031
+3115
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-589989
+626318
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ให้ทำระบบคำนวนเวลาที่น้ำหมึกจะขยายเป็นวงกลมไปถึงบ้านแต่ละหลังที่เรามีข้อมูลเริ่มจากจุด0,0 โดยinput มี S พื้นที่ทีหมึกไหลไปต่อวินาที N จำนวนบ้านที่ต้องการรู้ว่าถูน้ำท่วมในวินาทีใด X,Y คือพิกัดบ้านจำนวนเท่ากับN output คือ จำนวนวินาทีที่น้ำหมึกถึงบ้านแต่ละหลังเป็นวินาทีปัดขึ้น constraints คำตอบเป็นวินาทีที่ปัดขึ้นค่า piสำหรับสูตรคำนวน = 3.1416 1บรรทัด ใส่ 2 input
+โปรแกรมรับจำนวนร้านค้าและจำนวนเวลาที่ต้องการตรวจสอบจากนั้นรับเวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเพื่อหาว่าในเวลาที่กำหนดมีร้านค้าเปิดอยู่กี่ร้าน Input จำนวนร้านค้า และจำนวนเวลาที่ต้องการตรวจสอบ เวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเวลาที่ต้องการตรวจสอบ Output จำนวนร้านค้าที่เปิดอยู่ในแต่ละเวลาที่ตรวจสอบ Constraintsเวลาที่ใช้มีค่าตั้งแต่ 0 ถึง 1440 นาที
 ```
 
 ---
@@ -93,12 +93,24 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับระยะเวลาที่หมึกไหล และ จำนวนบ้านที่อยากรู้เวลาหมึกมาถึง
-Step 2:ใส่พิกัดบ้านXและY
-Step 3:คำนวนระยะ
-Step 4:คำนวนว่าถึงบ้านใช้เวลากี่วิปัดขึ้น
-Step 5:วนกลับขั้น3 คำนวนแต่ละหลังจนครบN
-step 6:แสดงผลทั้งหมด
+รับ num และ check
+
+สร้างรายการ time ตั้งแต่ 0 ถึง 1440
+
+วนตามจำนวนร้านค้า:
+    รับเวลา start และ stop
+    เพิ่ม 1 ที่เวลา start
+    ลด 1 ที่เวลา stop
+
+วนตั้งแต่ 1 ถึง 1440:
+    สะสมจำนวนร้านจากเวลาก่อนหน้า
+
+รับเวลาที่ต้องการตรวจสอบ
+
+วนตามจำนวน check:
+    นำจำนวนร้านที่เปิดในเวลานั้นมาเก็บเป็นคำตอบ
+
+แสดงคำตอบทั้งหมดโดยเว้นวรรค
 ```
 
 ---
@@ -118,7 +130,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same because it's work
+same it work and pass
 ```
 
 ---
@@ -138,35 +150,28 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ดูว่าสูตรคำนวนถูกต้องมั้ย
+เปิดไม่ทับซ้อนกัน
 ```
 
 Input:
 
 ```text
-50 4
-1 1
-10 10
-20 20
-30 30
+2 3
+0 100
+200 300
+50 150 250
 ```
 
 Expected output:
 
 ```text
-1
-13
-51
-144
+1 0 1
 ```
 
 Actual output:
 
 ```text
-1
-13
-51
-144
+1 0 1
 ```
 
 Result:
@@ -180,29 +185,29 @@ Pass
 Why I chose this case:
 
 ```text
-ดูว่าปัดขึ้นมั้ย
+เปิดพร้อมกันหลายร้าน
 ```
 
 Input:
 
 ```text
-60 2
-16 20
-11 12
+3 3
+0 100
+50 150
+75 200
+50 100 175
 ```
 
 Expected output:
 
 ```text
-35
-14
+2 3 1
 ```
 
 Actual output:
 
 ```text
-35
-14
+2 3 1
 ```
 
 Result:
@@ -216,29 +221,28 @@ Pass
 Why I chose this case:
 
 ```text
-ดูว่าค่าเต็มลบจะได้คำตอบมั้ย
+เวลาที่ร้านปิดพอดี
 ```
 
 Input:
 
 ```text
-10 2
--1 -1
--10 -10
+2 4
+10 20
+20 30
+10 19 20 30
 ```
 
 Expected output:
 
 ```text
-1
-63
+1 1 1 0
 ```
 
 Actual output:
 
 ```text
-1
-63
+1 1 1 0
 ```
 
 Result:
@@ -272,7 +276,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-YES explanation of a programming concept
+No
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -297,19 +301,19 @@ Not allowed:
 Who helped you?
 
 ```text
-a guy in youtube
+youtube
 ```
 
 What did they help with?
 
 ```text
-สูตรการคำนวน
+เรื่องlist
 ```
 
 What did you still do by yourself?
 
 ```text
-everything else
+โค้ด
 ```
 
 Did you copy any code from another person?
