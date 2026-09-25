@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3115
+3232
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-626318
+650029
 ```
 
 OJ status:
@@ -33,7 +33,7 @@ Pass
 Independent time spent on this problem:
 
 ```text
-15-30 minutes
+0-15 minutes
 ```
 
 Choose one:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนร้านค้าและจำนวนเวลาที่ต้องการตรวจสอบจากนั้นรับเวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเพื่อหาว่าในเวลาที่กำหนดมีร้านค้าเปิดอยู่กี่ร้าน Input จำนวนร้านค้า และจำนวนเวลาที่ต้องการตรวจสอบ เวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเวลาที่ต้องการตรวจสอบ Output จำนวนร้านค้าที่เปิดอยู่ในแต่ละเวลาที่ตรวจสอบ Constraintsเวลาที่ใช้มีค่าตั้งแต่ 0 ถึง 1440 นาที
+กระโดดอย่างน้อยกี่ครั้งจึงจะเดินทางได้ระยะทางถึง Y เมตรหรือมากกว่า โดยการกระโดดครั้งแรกจะได้ระยะ X เมตร และทุกครั้งถัดไปจะกระโดดได้น้อยลงครั้งละ 2 เมตร Input ระยะทางที่กระโดดได้ในครั้งแรก ระยะทางเป้าหมายที่ต้องการไปให้ถึง Output แสดงจำนวนครั้งที่ต้องกระโดด น้อยที่สุด ถ้าไม่สามารถไปถึง Y ได้ ให้แสดง -1
 ```
 
 ---
@@ -93,24 +93,24 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับ num และ check
+รับค่า X, Y
 
-สร้างรายการ time ตั้งแต่ 0 ถึง 1440
+กำหนด total = 0
+กำหนด jump = X
+กำหนด count = 0
 
-วนตามจำนวนร้านค้า:
-    รับเวลา start และ stop
-    เพิ่ม 1 ที่เวลา start
-    ลด 1 ที่เวลา stop
+ขณะที่ jump > 0
+    total = total + jump
+    count = count + 1
 
-วนตั้งแต่ 1 ถึง 1440:
-    สะสมจำนวนร้านจากเวลาก่อนหน้า
+    ถ้า total >= Y
+        แสดง count
+        จบการทำงาน
 
-รับเวลาที่ต้องการตรวจสอบ
+    jump = jump - 2
 
-วนตามจำนวน check:
-    นำจำนวนร้านที่เปิดในเวลานั้นมาเก็บเป็นคำตอบ
-
-แสดงคำตอบทั้งหมดโดยเว้นวรรค
+ถ้าจบการวนซ้ำโดยยังไม่ถึง Y
+    แสดง -1
 ```
 
 ---
@@ -130,7 +130,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same it work and pass
+same it work that why 
 ```
 
 ---
@@ -150,28 +150,25 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-เปิดไม่ทับซ้อนกัน
+ถึงเป้าหมายในการกระโดดครั้งแรก
 ```
 
 Input:
 
 ```text
-2 3
-0 100
-200 300
-50 150 250
+10 5
 ```
 
 Expected output:
 
 ```text
-1 0 1
+1
 ```
 
 Actual output:
 
 ```text
-1 0 1
+1
 ```
 
 Result:
@@ -185,29 +182,25 @@ Pass
 Why I chose this case:
 
 ```text
-เปิดพร้อมกันหลายร้าน
+กระโดดหลายครั้ง
 ```
 
 Input:
 
 ```text
-3 3
-0 100
-50 150
-75 200
-50 100 175
+10 25
 ```
 
 Expected output:
 
 ```text
-2 3 1
+4
 ```
 
 Actual output:
 
 ```text
-2 3 1
+4
 ```
 
 Result:
@@ -221,28 +214,25 @@ Pass
 Why I chose this case:
 
 ```text
-เวลาที่ร้านปิดพอดี
+ไม่สามารถถึงเป้าหมายได้
 ```
 
 Input:
 
 ```text
-2 4
-10 20
-20 30
-10 19 20 30
+5 20
 ```
 
 Expected output:
 
 ```text
-1 1 1 0
+-1
 ```
 
 Actual output:
 
 ```text
-1 1 1 0
+-1
 ```
 
 Result:
@@ -301,25 +291,25 @@ Not allowed:
 Who helped you?
 
 ```text
-youtube
+
 ```
 
 What did they help with?
 
 ```text
-เรื่องlist
+
 ```
 
 What did you still do by yourself?
 
 ```text
-โค้ด
+
 ```
 
 Did you copy any code from another person?
 
 ```text
-No
+
 ```
 
 ---

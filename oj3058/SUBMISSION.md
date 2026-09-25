@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3042
+3058
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-564578
+623275
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนเต็มบวก1จำนวน และหาร10 ไปเรื่อยๆจนได้0 โดยจะแสดงเป็นเลขที่10หารลงตัว input จำนวนเต็มบวก output เลขที่10 หารลงตัวจากค่าที่เราใส่ จนถึง 0 constraints จำนวนเต็มบวก ต้องเว้นวัก เอาเฉพาะจำนวนที่เลขนั้นหารลงตัวเช่น 106 ก็ 100 90 80
+หลังจากเลือกgoalที่ต้องการใช้ก้อนใหญ่ต่อก่อนแล้วจึงใช้ก่อนเล็กตามหากยังเหลืออยู่หากกไม่ให้เป็น-1 input brick เล็ก brick ใหญ่ goal output คือสิ่งbrickที่เหลือจากการต่อ ถ้าไม่หลือเป็น-1
 ```
 
 ---
@@ -93,11 +93,20 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับจำนวนเต็มบวก
-Step 2:หาร 10 เอา เลขที่10หารลงตัว
-Step 3:เก็บข้อมูล
-Step 4:วน 2 จนหารไม่ได้
-Step 5:แสดงลทั้งหมด
+รับจำนวนอิฐเล็ก
+รับจำนวนอิฐใหญ่
+รับความยาวเป้าหมาย
+
+หาอิฐใหญ่ที่สามารถใช้ได้มากที่สุด
+    = ค่าน้อยกว่าระหว่างจำนวนอิฐใหญ่ที่มี
+      กับจำนวนอิฐใหญ่ที่ใช้ได้โดยไม่เกิน goal
+
+หาความยาวที่เหลือหลังจากใช้อิฐใหญ่
+
+ถ้าอิฐเล็กที่มี >= ความยาวที่เหลือ:
+    แสดงความยาวที่เหลือ
+ถ้าไม่:
+    แสดง -1
 ```
 
 ---
@@ -143,19 +152,21 @@ test
 Input:
 
 ```text
-99
+5
+3
+1
 ```
 
 Expected output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+1
 ```
 
 Actual output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+1
 ```
 
 Result:
@@ -169,25 +180,27 @@ Pass
 Why I chose this case:
 
 ```text
-ลอง 0 ว่า จะตอบมั้ย
+ลอง ว่า เต็มลบ จะตอบมั้ย
 ```
 
 Input:
 
 ```text
-0
+5
+2
+-1
 ```
 
 Expected output:
 
 ```text
-0
+4
 ```
 
 Actual output:
 
 ```text
-0
+4
 ```
 
 Result:
@@ -201,25 +214,27 @@ Pass
 Why I chose this case:
 
 ```text
-ลองเต็มลบว่าจะหารมั้ย
+ลองเต็ม0
 ```
 
 Input:
 
 ```text
--10
+0
+1
+2
 ```
 
 Expected output:
 
 ```text
--
+-1
 ```
 
 Actual output:
 
 ```text
--
+-1
 ```
 
 Result:

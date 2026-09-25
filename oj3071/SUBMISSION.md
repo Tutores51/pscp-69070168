@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3042
+3071
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-564578
+623285
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนเต็มบวก1จำนวน และหาร10 ไปเรื่อยๆจนได้0 โดยจะแสดงเป็นเลขที่10หารลงตัว input จำนวนเต็มบวก output เลขที่10 หารลงตัวจากค่าที่เราใส่ จนถึง 0 constraints จำนวนเต็มบวก ต้องเว้นวัก เอาเฉพาะจำนวนที่เลขนั้นหารลงตัวเช่น 106 ก็ 100 90 80
+โจทย์ให้ช่วงจำนวนเต็มตั้งแต่ A ถึง B และกำหนดตัวหาร d กับเศษ r มาให้ ต้องหาว่าในช่วง A, B มีจำนวนเต็มกี่จำนวนที่เมื่อนำไปหารด้วย Input A จุดเริ่มต้นของช่วง จำนวน B จุดสิ้นสุดของช่วง จำนวน d ตัวหาร จำนวน r เศษที่ต้องการd แล้วเหลือเศษ r Output แสดงจำนวนตัวเลขในช่วง [A, B] ที่เมื่อนำไปหารด้วย d แล้วมีเศษเท่ากับ r
 ```
 
 ---
@@ -93,11 +93,16 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับจำนวนเต็มบวก
-Step 2:หาร 10 เอา เลขที่10หารลงตัว
-Step 3:เก็บข้อมูล
-Step 4:วน 2 จนหารไม่ได้
-Step 5:แสดงลทั้งหมด
+รับ A
+รับ B
+รับ d
+รับ r
+
+คำนวณจำนวนที่มีเศษ r ตั้งแต่ต้นจนถึง B
+คำนวณจำนวนที่มีเศษ r ก่อนถึง A
+นำค่าทั้งสองมาลบกัน
+
+แสดงคำตอบ
 ```
 
 ---
@@ -137,25 +142,28 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-test
+มีหลายจำนวนที่ตรงเงื่อนไข
 ```
 
 Input:
 
 ```text
-99
+1
+20
+3
+1
 ```
 
 Expected output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+7
 ```
 
 Actual output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+7
 ```
 
 Result:
@@ -169,25 +177,28 @@ Pass
 Why I chose this case:
 
 ```text
-ลอง 0 ว่า จะตอบมั้ย
+1 จำนวนที่ตรงเงื่อนไข
 ```
 
 Input:
 
 ```text
-0
+10
+15
+5
+2
 ```
 
 Expected output:
 
 ```text
-0
+1
 ```
 
 Actual output:
 
 ```text
-0
+1
 ```
 
 Result:
@@ -201,25 +212,29 @@ Pass
 Why I chose this case:
 
 ```text
-ลองเต็มลบว่าจะหารมั้ย
+ไม่มีจำนวนที่ตรงเงื่อนไข
 ```
 
 Input:
 
 ```text
--10
+Input
+1
+5
+2
+0
 ```
 
 Expected output:
 
 ```text
--
+2
 ```
 
 Actual output:
 
 ```text
--
+2
 ```
 
 Result:

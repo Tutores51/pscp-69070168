@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3115
+3160
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-626318
+640973
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนร้านค้าและจำนวนเวลาที่ต้องการตรวจสอบจากนั้นรับเวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเพื่อหาว่าในเวลาที่กำหนดมีร้านค้าเปิดอยู่กี่ร้าน Input จำนวนร้านค้า และจำนวนเวลาที่ต้องการตรวจสอบ เวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเวลาที่ต้องการตรวจสอบ Output จำนวนร้านค้าที่เปิดอยู่ในแต่ละเวลาที่ตรวจสอบ Constraintsเวลาที่ใช้มีค่าตั้งแต่ 0 ถึง 1440 นาที
+โปรแกรมรับช่วงตัวเลข แล้วตรวจสอบว่าเลขใดเป็นจำนวนเฉพาะ จากนั้นแสดงจำนวนเฉพาะทั้งหมดและจำนวนรวมของจำนวนเฉพาะ Input รับเลขเริ่มต้น start_number และเลขสุดท้าย end_number Output แสดงจำนวนเฉพาะในช่วงนั้น และแสดงจำนวนทั้งหมดในรูปแบบ Total primes: Constraints ต้องตรวจสอบทุกจำนวนในช่วงที่กำหนด
 ```
 
 ---
@@ -93,24 +93,39 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับ num และ check
+รับค่า start_number, end_number
 
-สร้างรายการ time ตั้งแต่ 0 ถึง 1440
+กำหนด total_primes ← 0
 
-วนตามจำนวนร้านค้า:
-    รับเวลา start และ stop
-    เพิ่ม 1 ที่เวลา start
-    ลด 1 ที่เวลา stop
+กำหนด prime_text ← ""
 
-วนตั้งแต่ 1 ถึง 1440:
-    สะสมจำนวนร้านจากเวลาก่อนหน้า
+สำหรับ number ตั้งแต่ start_number ถึง end_number
 
-รับเวลาที่ต้องการตรวจสอบ
+    ถ้า number < 2
+        ข้ามไปยังรอบถัดไป
 
-วนตามจำนวน check:
-    นำจำนวนร้านที่เปิดในเวลานั้นมาเก็บเป็นคำตอบ
+    กำหนด prime ← จริง
 
-แสดงคำตอบทั้งหมดโดยเว้นวรรค
+    สำหรับ divisor ตั้งแต่ 2 ถึง number - 1
+
+        ถ้า number MOD divisor = 0
+            กำหนด prime ← เท็จ
+            หยุดการทำซ้ำ
+
+    ถ้า prime = จริง
+
+        ถ้า prime_text ไม่ว่าง
+            เพิ่มช่องว่างใน prime_text
+
+        เพิ่ม number ต่อท้าย prime_text
+
+        total_primes ← total_primes + 1
+
+ถ้า total_primes > 0
+
+    แสดง prime_text
+
+แสดง "Total primes: " และ total_primes
 ```
 
 ---
@@ -130,7 +145,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same it work and pass
+same it work don't touch it
 ```
 
 ---
@@ -150,28 +165,27 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-เปิดไม่ทับซ้อนกัน
+มีจำนวนเฉพาะหลายตัว
 ```
 
 Input:
 
 ```text
-2 3
-0 100
-200 300
-50 150 250
+1 10
 ```
 
 Expected output:
 
 ```text
-1 0 1
+2 3 5 7
+Total primes: 4
 ```
 
 Actual output:
 
 ```text
-1 0 1
+2 3 5 7
+Total primes: 4
 ```
 
 Result:
@@ -185,29 +199,25 @@ Pass
 Why I chose this case:
 
 ```text
-เปิดพร้อมกันหลายร้าน
+ไม่มีจำนวนเฉพาะ
 ```
 
 Input:
 
 ```text
-3 3
-0 100
-50 150
-75 200
-50 100 175
+32 36
 ```
 
 Expected output:
 
 ```text
-2 3 1
+Total primes: 0
 ```
 
 Actual output:
 
 ```text
-2 3 1
+Total primes: 0
 ```
 
 Result:
@@ -221,28 +231,27 @@ Pass
 Why I chose this case:
 
 ```text
-เวลาที่ร้านปิดพอดี
+มีจำนวนเฉพาะเพียงตัวเดียว
 ```
 
 Input:
 
 ```text
-2 4
-10 20
-20 30
-10 19 20 30
+10 11
 ```
 
 Expected output:
 
 ```text
-1 1 1 0
+11
+Total primes: 1
 ```
 
 Actual output:
 
 ```text
-1 1 1 0
+11
+Total primes: 1
 ```
 
 Result:
@@ -301,25 +310,25 @@ Not allowed:
 Who helped you?
 
 ```text
-youtube
+
 ```
 
 What did they help with?
 
 ```text
-เรื่องlist
+
 ```
 
 What did you still do by yourself?
 
 ```text
-โค้ด
+
 ```
 
 Did you copy any code from another person?
 
 ```text
-No
+
 ```
 
 ---

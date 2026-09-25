@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3110
+3299
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-626330
+667771
 ```
 
 OJ status:
@@ -33,7 +33,7 @@ Pass
 Independent time spent on this problem:
 
 ```text
-15-30 minutes
+0-15 minutes
 ```
 
 Choose one:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ให้คำนวณค่าธรรมเนียมการส่งพัสดุ โดยต้องเลือก ต้นทาง ปลายทาง และน้ำหนักของพัสดุ ตรวจสอบเส้นทางกับตารางที่โจทย์กำหนด แต่ละเส้นทางจะมีค่าธรรมเนียมพื้นฐานและอัตราค่าขนส่งต่อน้ำหนักที่แตกต่างกัน Input ต้นทาง ปลายทาง น้ำหนัก output ค่าจัดส่งทั้งหมด โดยแสดงทศนิยม 2 ตำแหน่ง ผลลัพธ์ค่าจัดส่งต้องแสดงทศนิยม 2 ตำแหน่ง
+ปลูกดอกไม้จากมุมด้านหนึ่งของแปลงดอกไม้ ในการปลูกคุณจะไล่ปลูกเป็นแถบแนวทแยงที่แต่ละแถบมีความหนาเท่ากับ L ช่อง ปลูกดอกไม้ทั้งสิ้น N ช่อง เขียนโปรแกรมรับขนาดของแถบและจำนวนช่องที่เราปลูกดอกไม้ในรูปแบบข้างต้น แล้วคำนวณว่าช่องสุดท้ายที่ปลูกเป็นดอกไม้ในแถบใด Input จำนวนเต็มสองจำนวนคือ L และ N outputหนึ่งบรรทัด เป็นจำนวนเต็มหนึ่งจำนวนระบุหมายเลขของแถบของช่องสุดท้ายที่มีการปลูกดอกไม้ constraintsสามารถพิจารณาว่ามีขนาดไม่จำกัดก็ได้
 ```
 
 ---
@@ -93,21 +93,16 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับต้นทางและปลายทาง
-รับน้ำหนักพัสดุ
-
-ตรวจสอบเส้นทาง:
-    ถ้าเป็น BKK -> CNX:
-        กำหนดค่าธรรมเนียมและอัตราตามตาราง
-    ถ้าเป็น CNX -> UBP:
-        กำหนดค่าธรรมเนียมและอัตราตามตาราง
-    ...
-    ถ้าไม่มีเส้นทางนี้:
-        แสดง Error และจบโปรแกรม
-
-คำนวณค่าจัดส่ง
-    = ค่าธรรมเนียม + น้ำหนัก × อัตราค่าขนส่ง
-
+1.รับค่า L และ N
+2.กำหนดตัวแปร diagonal เพื่อเก็บหมายเลขเส้นทแยงมุม
+3.กำหนด total เพื่อเก็บจำนวนช่องที่ปลูกสะสม
+4.เพิ่มหมายเลขเส้นทแยงมุมทีละ 1
+5.จำนวนช่องของเส้นทแยงมุมที่เพิ่มเข้ามาจะเท่ากับหมายเลขเส้นนั้น
+6.เพิ่มจำนวนช่องนั้นเข้าไปใน total
+7.ทำซ้ำจนกว่า total จะมากกว่าหรือเท่ากับ N
+8.เมื่อหยุดที่ช่องที่ N อยู่ในเส้นทแยงมุมที่เก็บไว้ใน diagonal
+9.นำหมายเลขเส้นทแยงมุมมาแบ่งกลุ่มตามขนาด L เพื่อหาเลขแถบ
+10.แสดงผล
 ```
 
 ---
@@ -127,7 +122,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same im the best not anything in that plan was wrong
+same because it working
 ```
 
 ---
@@ -147,26 +142,25 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-เส้นทาง BKK ไป CNX
+L เล็ก และ N ไม่มาก
 ```
 
 Input:
 
 ```text
-BKK CNX
-2
+1 5
 ```
 
 Expected output:
 
 ```text
-70.00
+3
 ```
 
 Actual output:
 
 ```text
-70.00
+3
 ```
 
 Result:
@@ -180,26 +174,25 @@ Pass
 Why I chose this case:
 
 ```text
-เส้นทาง UBP ไป PKT
+L ขนาดกลาง และ N อยู่ช่วงกลาง
 ```
 
 Input:
 
 ```text
-UBP PKT
-3
+4 20
 ```
 
 Expected output:
 
 ```text
-250.00
+2
 ```
 
 Actual output:
 
 ```text
-250.00
+2
 ```
 
 Result:
@@ -213,25 +206,25 @@ Pass
 Why I chose this case:
 
 ```text
-เส้นทางไม่ถูกต้อง
+L มาก และ N จำนวนมาก
 ```
 
 Input:
 
 ```text
-BKK UBP
+10 100000
 ```
 
 Expected output:
 
 ```text
-Error
+45
 ```
 
 Actual output:
 
 ```text
-Error
+45
 ```
 
 Result:
@@ -308,7 +301,7 @@ What did you still do by yourself?
 Did you copy any code from another person?
 
 ```text
-No
+
 ```
 
 ---

@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3042
+3111
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-564578
+626308
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนเต็มบวก1จำนวน และหาร10 ไปเรื่อยๆจนได้0 โดยจะแสดงเป็นเลขที่10หารลงตัว input จำนวนเต็มบวก output เลขที่10 หารลงตัวจากค่าที่เราใส่ จนถึง 0 constraints จำนวนเต็มบวก ต้องเว้นวัก เอาเฉพาะจำนวนที่เลขนั้นหารลงตัวเช่น 106 ก็ 100 90 80
+โปรแกรมรับข้อมูลว่าสมาชิกสหกรณ์หรือไม่ และรับจำนวนสินค้าที่ซื้อ จากนั้นรับราคาสินค้าแต่ละรายการแล้วนำมารวมกัน โดยถ้าเป็นสมาชิกจะได้ส่วนลด 5% แต่ถ้าไม่เป็นสมาชิกและยอดรวมตั้งแต่ 500 บาทขึ้นไปจะได้ส่วนลด 3% ถ้าไม่เข้าเงื่อนไขจะไม่ได้ส่วนลด แล้วแสดงยอดเงินที่ต้องจ่ายหลังหักส่วนลดเป็นทศนิยม 2 ตำแหน่ง input ข้อมูลสมาชิก Y หรือ Nจำนวนสินค้าที่ซื้อราคาสินค้าแต่ละรายการ output ยอดเงินที่ต้องจ่ายหลังหักส่วนลด แสดงทศนิยม 2 ตำแหน่ง
 ```
 
 ---
@@ -93,11 +93,21 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับจำนวนเต็มบวก
-Step 2:หาร 10 เอา เลขที่10หารลงตัว
-Step 3:เก็บข้อมูล
-Step 4:วน 2 จนหารไม่ได้
-Step 5:แสดงลทั้งหมด
+รับสถานะสมาชิก
+รับจำนวนสินค้า
+
+กำหนดยอดรวมเป็น 0
+
+วนรับราคาสินค้าแต่ละรายการ:
+    นำราคาไปบวกกับยอดรวม
+
+ถ้าเป็นสมาชิก:
+    ลดราคา 5%
+
+ถ้าไม่เป็นสมาชิก และยอดรวม >= 500:
+    ลดราคา 3%
+
+แสดงยอดเงินที่ต้องจ่ายเป็นทศนิยม 2 ตำแหน่ง
 ```
 
 ---
@@ -117,7 +127,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same im the best not anything in that plan was wrong
+same same because why not
 ```
 
 ---
@@ -137,25 +147,29 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-test
+เป็นสมาชิกและได้รับส่วนลด 5%
 ```
 
 Input:
 
 ```text
-99
+Y
+3
+20
+45.5
+10
 ```
 
 Expected output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+71.73
 ```
 
 Actual output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+71.73
 ```
 
 Result:
@@ -169,25 +183,29 @@ Pass
 Why I chose this case:
 
 ```text
-ลอง 0 ว่า จะตอบมั้ย
+ไม่เป็นสมาชิก แต่ยอดซื้อถึง 500 บาท
 ```
 
 Input:
 
 ```text
-0
+N
+3
+200
+200
+100
 ```
 
 Expected output:
 
 ```text
-0
+485.00
 ```
 
 Actual output:
 
 ```text
-0
+485.00
 ```
 
 Result:
@@ -201,25 +219,29 @@ Pass
 Why I chose this case:
 
 ```text
-ลองเต็มลบว่าจะหารมั้ย
+ไม่เป็นสมาชิกและยอดซื้อน้อยกว่า 500 บาท
 ```
 
 Input:
 
 ```text
--10
+N
+3
+200
+200
+99
 ```
 
 Expected output:
 
 ```text
--
+499.00
 ```
 
 Actual output:
 
 ```text
--
+499.00
 ```
 
 Result:
@@ -253,7 +275,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-No
+Yes
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -278,19 +300,19 @@ Not allowed:
 Who helped you?
 
 ```text
-
+i search in some web
 ```
 
 What did they help with?
 
 ```text
-
+total = math.floor(total * 100 + 0.500000001) / 100
 ```
 
 What did you still do by yourself?
 
 ```text
-
+อย่างอื่น
 ```
 
 Did you copy any code from another person?

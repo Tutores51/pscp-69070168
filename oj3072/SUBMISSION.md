@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3042
+3072
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-564578
+626236
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนเต็มบวก1จำนวน และหาร10 ไปเรื่อยๆจนได้0 โดยจะแสดงเป็นเลขที่10หารลงตัว input จำนวนเต็มบวก output เลขที่10 หารลงตัวจากค่าที่เราใส่ จนถึง 0 constraints จำนวนเต็มบวก ต้องเว้นวัก เอาเฉพาะจำนวนที่เลขนั้นหารลงตัวเช่น 106 ก็ 100 90 80
+โปรแกรมนับว่า มีสระในคำที่ใส่ไปสระไหนมีกี่ตัว input คือคำ output คือ a e i o u ว่ามีกี่ตัวจาคำนั้น เช่นมี ฟ 1 ตัว a : 1
 ```
 
 ---
@@ -93,11 +93,17 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1:รับจำนวนเต็มบวก
-Step 2:หาร 10 เอา เลขที่10หารลงตัว
-Step 3:เก็บข้อมูล
-Step 4:วน 2 จนหารไม่ได้
-Step 5:แสดงลทั้งหมด
+สร้างรายการสระ a, e, i, o, u
+สร้างตัวนับของสระทั้ง 5 ตัว โดยเริ่มจาก 0
+
+วนดูตัวอักษรทีละตัว:
+    เปลี่ยนตัวอักษรเป็นตัวพิมพ์เล็ก
+    ถ้าตัวอักษรเป็นสระ:
+        เพิ่มจำนวนของสระตัวนั้น 1
+
+วนดูสระทั้ง 5 ตัว:
+    ถ้ามีจำนวนมากกว่า 0:
+        แสดงสระและจำนวนที่พบ
 ```
 
 ---
@@ -143,19 +149,21 @@ test
 Input:
 
 ```text
-99
+Hello World
 ```
 
 Expected output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+e : 1
+o : 2
 ```
 
 Actual output:
 
 ```text
-90 80 70 60 50 40 30 20 10 0
+e : 1
+o : 2
 ```
 
 Result:
@@ -169,25 +177,27 @@ Pass
 Why I chose this case:
 
 ```text
-ลอง 0 ว่า จะตอบมั้ย
+มีตัวพิมพ์ใหญ่
 ```
 
 Input:
 
 ```text
-0
+Apple
 ```
 
 Expected output:
 
 ```text
-0
+a : 1
+e : 1
 ```
 
 Actual output:
 
 ```text
-0
+a : 1
+e : 1
 ```
 
 Result:
@@ -201,25 +211,25 @@ Pass
 Why I chose this case:
 
 ```text
-ลองเต็มลบว่าจะหารมั้ย
+ไม่มีสระ
 ```
 
 Input:
 
 ```text
--10
+rrrr
 ```
 
 Expected output:
 
 ```text
--
+
 ```
 
 Actual output:
 
 ```text
--
+
 ```
 
 Result:

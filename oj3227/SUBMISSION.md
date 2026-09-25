@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3115
+3227
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-626318
+649989
 ```
 
 OJ status:
@@ -33,7 +33,7 @@ Pass
 Independent time spent on this problem:
 
 ```text
-15-30 minutes
+0-15 minutes
 ```
 
 Choose one:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-โปรแกรมรับจำนวนร้านค้าและจำนวนเวลาที่ต้องการตรวจสอบจากนั้นรับเวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเพื่อหาว่าในเวลาที่กำหนดมีร้านค้าเปิดอยู่กี่ร้าน Input จำนวนร้านค้า และจำนวนเวลาที่ต้องการตรวจสอบ เวลาเปิดและเวลาปิดของร้านค้าแต่ละร้านเวลาที่ต้องการตรวจสอบ Output จำนวนร้านค้าที่เปิดอยู่ในแต่ละเวลาที่ตรวจสอบ Constraintsเวลาที่ใช้มีค่าตั้งแต่ 0 ถึง 1440 นาที
+รับข้อมูล ชื่อย่อของไพ่ 1 ใบ แล้วแปลงชื่อย่อให้เป็น ชื่อเต็มของไพ่ โดยชื่อไพ่ประกอบด้วย 2 ส่วน คือ แต้มไพ่ และ สัญลักษณ์ของไพ่ Input แต้มไพ่ สัญลักษณ์ไพ่ Output แต้มไพ่ of สัญลักษณ์ไพ่
 ```
 
 ---
@@ -93,24 +93,31 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับ num และ check
+รับค่า card
+แปลง card เป็นตัวพิมพ์ใหญ่
 
-สร้างรายการ time ตั้งแต่ 0 ถึง 1440
+กำหนด suit = ตัวอักษรตัวสุดท้ายของ card
+กำหนด card = card ที่ตัดตัวอักษรตัวสุดท้ายออก
 
-วนตามจำนวนร้านค้า:
-    รับเวลา start และ stop
-    เพิ่ม 1 ที่เวลา start
-    ลด 1 ที่เวลา stop
+ถ้า card เท่ากับ "A"
+    card = "ace"
+ถ้าไม่ใช่ ถ้า card เท่ากับ "J"
+    card = "jack"
+ถ้าไม่ใช่ ถ้า card เท่ากับ "Q"
+    card = "queen"
+ถ้าไม่ใช่ ถ้า card เท่ากับ "K"
+    card = "king"
 
-วนตั้งแต่ 1 ถึง 1440:
-    สะสมจำนวนร้านจากเวลาก่อนหน้า
+ถ้า suit เท่ากับ "D"
+    suit = "diamonds"
+ถ้าไม่ใช่ ถ้า suit เท่ากับ "H"
+    suit = "hearts"
+ถ้าไม่ใช่ ถ้า suit เท่ากับ "S"
+    suit = "spades"
+ถ้าไม่ใช่ ถ้า suit เท่ากับ "C"
+    suit = "clubs"
 
-รับเวลาที่ต้องการตรวจสอบ
-
-วนตามจำนวน check:
-    นำจำนวนร้านที่เปิดในเวลานั้นมาเก็บเป็นคำตอบ
-
-แสดงคำตอบทั้งหมดโดยเว้นวรรค
+แสดง card + " of " + suit
 ```
 
 ---
@@ -130,7 +137,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same it work and pass
+same it work perfectlyx44
 ```
 
 ---
@@ -150,28 +157,25 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-เปิดไม่ทับซ้อนกัน
+ทดสอบ Ace และ Spades
 ```
 
 Input:
 
 ```text
-2 3
-0 100
-200 300
-50 150 250
+AS
 ```
 
 Expected output:
 
 ```text
-1 0 1
+ace of spades
 ```
 
 Actual output:
 
 ```text
-1 0 1
+ace of spades
 ```
 
 Result:
@@ -185,29 +189,25 @@ Pass
 Why I chose this case:
 
 ```text
-เปิดพร้อมกันหลายร้าน
+ทดสอบ Queen และ Hearts
 ```
 
 Input:
 
 ```text
-3 3
-0 100
-50 150
-75 200
-50 100 175
+QH
 ```
 
 Expected output:
 
 ```text
-2 3 1
+queen of hearts
 ```
 
 Actual output:
 
 ```text
-2 3 1
+queen of hearts
 ```
 
 Result:
@@ -221,28 +221,25 @@ Pass
 Why I chose this case:
 
 ```text
-เวลาที่ร้านปิดพอดี
+ทดสอบไพ่ตัวเลข และ Clubs
 ```
 
 Input:
 
 ```text
-2 4
-10 20
-20 30
-10 19 20 30
+7C
 ```
 
 Expected output:
 
 ```text
-1 1 1 0
+7 of clubs
 ```
 
 Actual output:
 
 ```text
-1 1 1 0
+7 of clubs
 ```
 
 Result:
@@ -301,25 +298,25 @@ Not allowed:
 Who helped you?
 
 ```text
-youtube
+
 ```
 
 What did they help with?
 
 ```text
-เรื่องlist
+
 ```
 
 What did you still do by yourself?
 
 ```text
-โค้ด
+
 ```
 
 Did you copy any code from another person?
 
 ```text
-No
+
 ```
 
 ---
