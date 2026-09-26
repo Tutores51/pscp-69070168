@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3233
+3296
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-650084
+667676
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ตรวจสลากที่ซื้อว่าตรงกับผลรางวัลหรือไม่ โดยเปรียบเทียบ ตัวอักษร และ หมายเลข 5 หลัก แล้วให้เงินรางวัลตามเงื่อนไขที่กำหนด โดยถ้าตรงหลายเงื่อนไข จะได้รับเฉพาะ รางวัลที่มีมูลค่าสูงที่สุด Input ตัวอักษรและหมายเลขสลากที่ถูกรางวัล ตัวอักษรและหมายเลขสลากที่ซื้อ Output จำนวนเงินรางวัลที่ได้รับ
+เขียนโปรแกรมเพื่อรับค่าสี RGB ของสีตั้งต้น 2 สี แล้วคำนวณหาค่าสีใหม่ที่เกิดจากการผสมกันเอาRGBทั้ง2สีมาบวกันแล้วหาร2เป็นตัวเลน 0 ถึง 255 แต่ละ สี input เลขRGB ของสองสี output เลขRGBสีใหม่ constraintsไม่ต้องมีข้อความอื่นปะปนแค่เลขเท่านั้น
 ```
 
 ---
@@ -93,34 +93,12 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับ win_letter และ win_num
-รับ buy_letter และ buy_num
-
-ถ้า win_letter ตรงกับ buy_letter และ win_num ตรงกับ buy_num
-    แสดง 1000000
-
-ถ้าไม่ใช่ ถ้า win_num ตรงกับ buy_num
-    แสดง 100000
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    และเลขท้าย 3 ตัวตรงกัน
-    แสดง 2000
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    และเลขท้าย 2 ตัวตรงกัน
-    แสดง 1000
-
-ถ้าไม่ใช่ ถ้าเลขท้าย 3 ตัวตรงกัน
-    แสดง 200
-
-ถ้าไม่ใช่ ถ้าเลขท้าย 2 ตัวตรงกัน
-    แสดง 100
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    แสดง 20
-
-ถ้าไม่ตรงกับทุกเงื่อนไข
-    แสดง 0
+1.รับค่า R G B ของสีทั้ง2
+2.นำค่า R ของสีทั้งสองมาบวกกัน แล้วหารด้วย 2
+3.นำค่า G ของสีทั้งสองมาบวกกัน แล้วหารด้วย 2
+4.นำค่า B ของสีทั้งสองมาบวกกัน แล้วหารด้วย 2
+5.ตัดเศษทิ้ง
+6.แสดงค่า R G B ใหม่
 ```
 
 ---
@@ -140,7 +118,7 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-same it work like i want
+same why? because it work no bug
 ```
 
 ---
@@ -160,26 +138,26 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ตรงทั้งหมด
+สีพื้นฐาน 2 สี
 ```
 
 Input:
 
 ```text
-A 12345
-A 12345
+255 0 0
+0 0 255
 ```
 
 Expected output:
 
 ```text
-1000000
+127 0 127
 ```
 
 Actual output:
 
 ```text
-1000000
+127 0 127
 ```
 
 Result:
@@ -193,26 +171,26 @@ Pass
 Why I chose this case:
 
 ```text
-ลขท้าย 3 ตัวตรง แต่ตัวอักษรไม่ตรง
+ค่าทั้งสองสีเท่ากัน
 ```
 
 Input:
 
 ```text
-A 12345
-B 54345
+100 150 200
+100 150 200
 ```
 
 Expected output:
 
 ```text
-200
+100 150 200
 ```
 
 Actual output:
 
 ```text
-200
+100 150 200
 ```
 
 Result:
@@ -226,26 +204,26 @@ Pass
 Why I chose this case:
 
 ```text
-ตัวอักษรตรง แต่เลขไม่ตรง
+มีค่าที่แตกต่างกันทุกช่อง
 ```
 
 Input:
 
 ```text
-C 12345
-C 67890
+50 100 150
+101 201 251
 ```
 
 Expected output:
 
 ```text
-20
+75 150 200
 ```
 
 Actual output:
 
 ```text
-20
+75 150 200
 ```
 
 Result:

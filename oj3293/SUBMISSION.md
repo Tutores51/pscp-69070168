@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3233
+3293
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-650084
+667594
 ```
 
 OJ status:
@@ -73,7 +73,7 @@ Also explain the input, output, and important constraints.
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
 ```text
-ตรวจสลากที่ซื้อว่าตรงกับผลรางวัลหรือไม่ โดยเปรียบเทียบ ตัวอักษร และ หมายเลข 5 หลัก แล้วให้เงินรางวัลตามเงื่อนไขที่กำหนด โดยถ้าตรงหลายเงื่อนไข จะได้รับเฉพาะ รางวัลที่มีมูลค่าสูงที่สุด Input ตัวอักษรและหมายเลขสลากที่ถูกรางวัล ตัวอักษรและหมายเลขสลากที่ซื้อ Output จำนวนเงินรางวัลที่ได้รับ
+รับค่า string เข้ามา 5 บรรทัด และแสดงค่าตัวอักษรที่อยู่ใน string นั้นในกรอบรูปสี่เหลี่ยม บนล่างมากกว่าคำที่ยาวสุด4 ส่วนแถวตัวอักษรให้เป็นตัวแรกกสุดกับตัวท้ายสุดที่ยาวเท่ากับขอบบนล่าง input ข้อความอะไรก็ได้4บรรทัด output กรอบ* 7 บรรทัดโดยจะมี space ระหว่างข้อความและกรอบซ้ายและขวาด้านละ  1 ช่อง constraints กรอบซ้ายและกรอบขวาต้องห่างกันอย่างน้อย 2 space
 ```
 
 ---
@@ -93,34 +93,15 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-รับ win_letter และ win_num
-รับ buy_letter และ buy_num
-
-ถ้า win_letter ตรงกับ buy_letter และ win_num ตรงกับ buy_num
-    แสดง 1000000
-
-ถ้าไม่ใช่ ถ้า win_num ตรงกับ buy_num
-    แสดง 100000
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    และเลขท้าย 3 ตัวตรงกัน
-    แสดง 2000
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    และเลขท้าย 2 ตัวตรงกัน
-    แสดง 1000
-
-ถ้าไม่ใช่ ถ้าเลขท้าย 3 ตัวตรงกัน
-    แสดง 200
-
-ถ้าไม่ใช่ ถ้าเลขท้าย 2 ตัวตรงกัน
-    แสดง 100
-
-ถ้าไม่ใช่ ถ้า win_letter ตรงกับ buy_letter
-    แสดง 20
-
-ถ้าไม่ตรงกับทุกเงื่อนไข
-    แสดง 0
+1.รับข้อความเข้ามาจำนวน 5 บรรทัด และเก็บไว้
+2.ตรวจสอบว่าข้อความบรรทัดไหนยาวมากที่สุด
+3.เอาที่ยาวสุดมาใช้กำหนดความกว้างของกรอบ
+4.แสดงกรอบด้านบนด้วย * ให้มีความยาวเท่ากับกรอบ
+5.วนแสดงข้อความทั้ง 5 บรรทัด
+6.ถ้าข้อความสั้นกว่าข้อความที่ยาวที่สุด ช่องว่างด้านขวา จนมีความยาวเท่ากับยาวสุด
+7.ใส่ * ด้านซ้ายและด้านขวาของข้อความ โดยมีช่องว่างระหว่างข้อความกับ * อย่างละ 1 ช่อง
+8.แสดงกรอบด้านล่างด้วย * ยาวเท่ากับกรอบบน
+9.แสดงผล
 ```
 
 ---
@@ -160,26 +141,41 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ตรงทั้งหมด
+ข้อความมีความยาวใกล้เคียงกัน
 ```
 
 Input:
 
 ```text
-A 12345
-A 12345
+Hello
+World
+Python
+Code
+Test
 ```
 
 Expected output:
 
 ```text
-1000000
+***********
+* Hello   *
+* World   *
+* Python  *
+* Code    *
+* Test    *
+***********
 ```
 
 Actual output:
 
 ```text
-1000000
+***********
+* Hello   *
+* World   *
+* Python  *
+* Code    *
+* Test    *
+***********
 ```
 
 Result:
@@ -193,26 +189,41 @@ Pass
 Why I chose this case:
 
 ```text
-ลขท้าย 3 ตัวตรง แต่ตัวอักษรไม่ตรง
+มีบรรทัดว่าง
 ```
 
 Input:
 
 ```text
-A 12345
-B 54345
+Hello
+World in
+a
+
+big frame
 ```
 
 Expected output:
 
 ```text
-200
+*************
+* Hello     *
+* World in  *
+* a         *
+*           *
+* big frame *
+*************
 ```
 
 Actual output:
 
 ```text
-200
+*************
+* Hello     *
+* World in  *
+* a         *
+*           *
+* big frame *
+*************
 ```
 
 Result:
@@ -226,26 +237,41 @@ Pass
 Why I chose this case:
 
 ```text
-ตัวอักษรตรง แต่เลขไม่ตรง
+ความยาวข้อความแตกต่างกันมาก
 ```
 
 Input:
 
 ```text
-C 12345
-C 67890
+A
+This is a very long text bro
+Hi
+B
+OK
 ```
 
 Expected output:
 
 ```text
-20
+********************************
+* A                            *
+* This is a very long text bro *
+* Hi                           *
+* B                            *
+* OK                           *
+********************************
 ```
 
 Actual output:
 
 ```text
-20
+********************************
+* A                            *
+* This is a very long text bro *
+* Hi                           *
+* B                            *
+* OK                           *
+********************************
 ```
 
 Result:
